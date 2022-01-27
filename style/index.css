@@ -13,7 +13,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	/* border: 0; */
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -44,10 +44,8 @@ table {
 
 * {
     box-sizing: border-box;
-    padding:0;
-    margin:0;
     max-width:100%;
-    border:1px solid red;
+    /* border: 1px solid grey; */
 }
 
 html {
@@ -99,83 +97,81 @@ nav a{
     
 }
 
+nav a:hover{
+    background-color: #03045E;
+    color: #CAF0F8;
+}
+
 #home{
     display:flex;
     background-color: #CAF0F8;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("https://picsum.photos/200/300/?blur");
+    background-image: url("https://media.istockphoto.com/photos/abstract-background-wallpaper-picture-id952039286?b=1&k=20&m=952039286&s=170667a&w=0&h=LmOcMt7FHxFUAr2bOSfTUPV9sQhME6ABtAYLM0cMkR4=");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height:60vh;
-    margin: 2% 10%;
-    padding:3%;
-    width:80%;
+    margin: 2% 5%;
     color: white;
 }
 
 #home button {
     display:flex;
     flex-direction: row;
-    border: 1px solid #03045E;
     height: 3vh;
+    background-color: transparent;
 }
 
 #home button a{
     font-size: 2rem;
     text-decoration: none;
     text-align: center;
+    color:white;
 }
 
 #gallery {
     display:flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 95vh;
+    
 }
 
 #gallery div{
     display:flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-flow: row wrap;
     width: 30%;
-    height: 30vh;
-    margin: 2% 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    margin: 1%;
 }
 
-#gallery .hide{
-    width: 30%;
-    height:5vh;
-    background-color: #CAF0F8;
-    display: none;
-    text-align: center;
-
+#gallery .container{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
 }
 
-#gallery .hide h3{
-    display: flex;
-    font-size: 2rem;
-    align-items: center;
+#gallery p{
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
 }
 
-#gallery div:hover .hide {
-    display:block;
-}
-
-#gallery .example {
-    background-image: url("https://picsum.photos/200/300?grayscale");
+.box{
+    width: 30%;
 }
 
 footer {
     background-color:#023E8A;
     width:100%;
-    height: 15vh;
+    height: 10vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -186,4 +182,46 @@ footer button{
 
 footer button a{
     text-decoration: none;
+}
+
+@media(max-width:800px){
+    h2{
+        font-size: 5rem;
+    }
+    header{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        margin-top: 2%;
+    }
+    nav{
+        flex-direction: column;
+        width:20%;
+    }
+    nav a{
+        margin: 0;
+        height: 5vh;
+        justify-content: center;
+    }
+    #gallery{
+        height:100vh;
+    }
+
+    #gallery .box{
+        width:40%;
+    }
+}
+
+@media(max-width:500px){
+    h1{
+        font-size: 4.5rem;
+    }
+    
+    #home{
+        height: 40vh;
+    }
+
+    #gallery {
+        height: 70vh;
+    }
 }
